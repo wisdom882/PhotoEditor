@@ -29,6 +29,7 @@ const DEFAULT_OPTIONS = [
   {
     name: "Saturation",
     property: "saturate",
+    value: 100,
     range: {
       min: 0,
       max: 200,
@@ -39,10 +40,10 @@ const DEFAULT_OPTIONS = [
   {
     name: "Grayscale",
     property: "grayscale",
-    value: 100,
+    value: 0,
     range: {
       min: 0,
-      max: 200,
+      max: 100,
     },
     unit: "%",
   },
@@ -50,10 +51,10 @@ const DEFAULT_OPTIONS = [
   {
     name: "Sepia",
     property: "sepia",
-    value: 100,
+    value: 0,
     range: {
       min: 0,
-      max: 200,
+      max: 100,
     },
     unit: "%",
   },
@@ -61,7 +62,7 @@ const DEFAULT_OPTIONS = [
   {
     name: "Hue Rotate",
     property: "hue-rotate",
-    value: 100,
+    value: 0,
     range: {
       min: 0,
       max: 360,
@@ -72,7 +73,7 @@ const DEFAULT_OPTIONS = [
   {
     name: "Blur",
     property: "blur",
-    value: 100,
+    value: 0,
     range: {
       min: 0,
       max: 20,
@@ -103,6 +104,9 @@ function App() {
 
     return { filter: filters.join(" ") };
   }
+
+  console.log(getImageStyle());
+
   return (
     <div className="container">
       <div className="main-image" style={getImageStyle()} />

@@ -80,7 +80,7 @@ const DEFAULT_OPTIONS = [
     },
     unit: "px",
   },
-];
+]; // setting CSS filters
 
 function App() {
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
@@ -88,6 +88,7 @@ function App() {
 
   const selectedOption = options[selectedOptionIndex];
 
+  //implementing slider
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => {
       return prevOptions.map((option, index) => {
@@ -97,6 +98,7 @@ function App() {
     });
   }
 
+  //styling image
   function getImageStyle() {
     const filters = options.map((option) => {
       return `${option.property}(${option.value}${option.unit})`;
@@ -108,6 +110,7 @@ function App() {
   console.log(getImageStyle());
 
   return (
+    //setting up display space for picture, slider and sidebar
     <div className="container">
       <div className="main-image" style={getImageStyle()} />
       <div className="sidebar">

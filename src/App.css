@@ -69,7 +69,7 @@ body{
 
 .slider-container{
   grid-area: slider;
-  background-color: chartreuse;
+  background-color: rgb(12, 20, 4);
   margin-top: 2rem;
   padding: 2rem;
 }
